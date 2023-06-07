@@ -6,6 +6,8 @@
 
 #include <math.h>
 
+#include <unistd.h>
+
 float sum (float*, float*);
 
 float sub (float*, float*);
@@ -239,7 +241,8 @@ int main(){
         scanf("%d", &d);
         int arr[a][b];
         int arr1[c][d];
-        int g, j, l, p;
+        int g, j, l, p, f, y;
+        int arr2[c][d];
         printf("Enter the first matrix:\n");
         for(g = 0; g < a; g++){
             for(j = 0; j < b; j++){
@@ -249,10 +252,20 @@ int main(){
         printf("Enter the second matrix:\n");
         for(l = 0; l < c; l++){
             for(p = 0; p < d; p++){
-                scanf("%d", &arr[l][p]);
+                scanf("%d", &arr1[l][p]);
             }
         }
-        
+        for(f = 0; f < c; f++){
+            for(y = 0; y < d; y++){
+                arr2[f][y] = arr[g][j] * arr1[l][p];
+            }
+        }
+        for(f = 0; f < c; f++){
+            printf("\n");
+            for(y = 0; y < d; y++){
+                printf("%d\t", arr2[f][y]);
+            }
+        }
     }
     if(n == 14){
         float c;
