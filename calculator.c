@@ -6,7 +6,6 @@
 
 #include <math.h>
 
-
 float sum (float*, float*);
 
 float sub (float*, float*);
@@ -71,7 +70,6 @@ int factorial(int c)
 }
 
 int main(){
-    printf("Choose the option\n");
     printf("1 - sum\n");
     printf("2 - subtraction\n");
     printf("3 - multiply\n");
@@ -92,8 +90,13 @@ int main(){
     printf("18 - matrix subtraction\n");
     printf("19 - matrix multiply\n");
     printf("20 - 1/x\n");
-    printf("\n");
+    printf("21 - pi number\n");
+    printf("22 - 10 to the power of x\n");
+    printf("23 - find the hypotenusen of the pythagorean triangle\n");
+    printf("24 - find the cathetus of the pythagorean triangle\n");
+    printf("25 - multiply matrix by number\n");
     int n;
+    printf("Choose the option:\n");
     scanf("%d", &n);
     if(n < 1){
         printf("Incorrect request. Try again.");
@@ -110,7 +113,7 @@ int main(){
         printf("Enter the second value:\n");
         scanf("%f", &y);
         result = sum(&x, &y);
-        printf("Result: %f\n", result);
+        printf("Result: %.2f\n", result);
     }
     if(n == 2){
         float x;
@@ -121,7 +124,7 @@ int main(){
         printf("Enter the second value:\n");
         scanf("%f", &y);
         result = sub(&x, &y);
-        printf("Result: %f\n", result);
+        printf("Result: %.2f\n", result);
     }
     if(n == 3){
         float x;
@@ -132,7 +135,7 @@ int main(){
         printf("Enter the second value:\n");
         scanf("%f", &y);
         result = mul(&x, &y);
-        printf("Result: %f\n", result);
+        printf("Result: %.2f\n", result);
     }
      if(n == 4){
         float x;
@@ -143,7 +146,7 @@ int main(){
         printf("Enter the second value:\n");
         scanf("%f", &y);
         result = divide(&x, &y);
-        printf("Result: %f\n", result);
+        printf("Result: %.2f\n", result);
     }
     if(n == 5){
         int x;
@@ -237,7 +240,7 @@ int main(){
         printf("Enter the value:\n");
         scanf("%f", &c);
         square = c * c;
-        printf("Square of the number is: %f\n", square);
+        printf("Square of the number is: %.2f\n", square);
     }
     if(n == 14){
         float c;
@@ -245,19 +248,19 @@ int main(){
         printf("Enter the value:\n");
         scanf("%f", &c);
         cube = c * c * c;
-        printf("Cube of the number is: %f\n", cube);
+        printf("Cube of the number is: %.2f\n", cube);
     }
     if(n == 15){
         float c;
         printf("Enter the value:\n");
         scanf("%f", &c);
-        printf("Square root of the number is: %f\n", sqrt(c));
+        printf("Square root of the number is: %.2f\n", sqrt(c));
     }
     if(n == 16){
         float c;
         printf("Enter the value:\n");
         scanf("%f", &c);
-        printf("Cube root of the number is: %f\n", cbrt(c));
+        printf("Cube root of the number is: %.2f\n", cbrt(c));
     }
     if(n == 17){
         int a, b, c, d;
@@ -273,20 +276,20 @@ int main(){
             printf("Addition not possible (matrices must be the same size)\n");
             return 0;
         }
-        int arr[a][b];
-        int arr1[c][d];
-        int arr2[a][d];
+        float arr[a][b];
+        float arr1[c][d];
+        float arr2[a][d];
         int t,y,u,i,o,p;
         printf("Enter the first matrix:\n");
         for(t = 0; t < a; t++){
             for(y = 0; y < b; y++){
-                scanf("%d", &arr[t][y]);
+                scanf("%f", &arr[t][y]);
             }
         }
         printf("Enter the second matrix:\n");
         for(u = 0; u < c; u++){
             for(i = 0; i < d; i++){
-                scanf("%d", &arr1[u][i]);
+                scanf("%f", &arr1[u][i]);
             }
         }
         for(o = 0; o < a; o++){
@@ -297,7 +300,7 @@ int main(){
         for(o = 0; o < a; o++){
             printf("\n");
             for(p = 0; p < d; p++){
-                printf("%d\t", arr2[o][p]);
+                printf("%.2f\t", arr2[o][p]);
             }
         }
     }
@@ -315,20 +318,20 @@ int main(){
             printf("Addition not possible (matrices must be the same size)\n");
             return 0;
         }
-        int arr[a][b];
-        int arr1[c][d];
-        int arr2[a][d];
+        float arr[a][b];
+        float arr1[c][d];
+        float arr2[a][d];
         int t,y,u,i,o,p;
         printf("Enter the first matrix:\n");
         for(t = 0; t < a; t++){
             for(y = 0; y < b; y++){
-                scanf("%d", &arr[t][y]);
+                scanf("%f", &arr[t][y]);
             }
         }
         printf("Enter the second matrix:\n");
         for(u = 0; u < c; u++){
             for(i = 0; i < d; i++){
-                scanf("%d", &arr1[u][i]);
+                scanf("%f", &arr1[u][i]);
             }
         }
         for(o = 0; o < a; o++){
@@ -339,38 +342,38 @@ int main(){
         for(o = 0; o < a; o++){
             printf("\n");
             for(p = 0; p < d; p++){
-                printf("%d\t", arr2[o][p]);
+                printf("%.2f\t", arr2[o][p]);
             }
         }
     }
     if(n == 19){
         int a, b, c, d;
-        printf("Enter the number of columns in the first matrix:\n");
-        scanf("%d", &a);
         printf("Enter the number of strings in the first matrix:\n");
+        scanf("%d", &a);
+        printf("Enter the number of columns in the first matrix:\n");
         scanf("%d", &b);
-        printf("Enter the number of columns in the second matrix:\n");
-        scanf("%d", &c);
         printf("Enter the number of strings in the second matrix:\n");
+        scanf("%d", &c);
+        printf("Enter the number of columns in the second matrix:\n");
         scanf("%d", &d);
-        int arr[a][b]; // 2 x 3 & 3 x 4 => 2 x 4
-        int arr1[c][d];
+        float arr[a][b]; // 2 x 3 & 3 x 4 => 2 x 4
+        float arr1[c][d];
         int g, j, l, p, f, y;
         if (b != c) {
             printf("Multiplication is not possible. The number of columns of the first matrix must be equal to the number of strings of the second matrix.\n");
             return 0;
         }
-        int arr2[a][d];
+        float arr2[a][d];
         printf("Enter the first matrix:\n");
         for(g = 0; g < a; g++){
             for(j = 0; j < b; j++){
-                scanf("%d", &arr[g][j]);
+                scanf("%f", &arr[g][j]);
             }
         }
         printf("Enter the second matrix:\n");
         for(l = 0; l < c; l++){
             for(p = 0; p < d; p++){
-                scanf("%d", &arr1[l][p]);
+                scanf("%f", &arr1[l][p]);
             }
         }
         for (int f = 0; f < a; f++) {
@@ -384,7 +387,7 @@ int main(){
         for(f = 0; f < c; f++){
             printf("\n");
             for(y = 0; y < d; y++){
-                printf("%d\t", arr2[f][y]);
+                printf("%.2f\t", arr2[f][y]);
             }
         }
     }
@@ -395,10 +398,10 @@ int main(){
         scanf("%f", &y);
         float result;
         result = x / y;
-        printf("Result: %f\n", result);
+        printf("Result: %.2f\n", result);
     }
 
-        if(n == 21){
+        if(n == 21) {
         float pi = 3.14159265359;
         float result;
         int x;
@@ -419,6 +422,63 @@ int main(){
             scanf("%f", &x);
             result = pi / x;
             printf("Result: %f\n", result);
+        }
+     }
+     if(n == 22){
+        float x;
+        float y = 10;
+        printf("Enter the degree:\n");
+        scanf("%f", &x);
+        printf("Result: %.2f\n", pow(y, x));
+     }
+     if(n == 23){
+        float x;
+        float y;
+        float z;
+        printf("Enter the first cathetus:\n");
+        scanf("%f", &x);
+        printf("Enter the second cathetus:\n");
+        scanf("%f", &y);
+        z = x * x + y * y;
+        printf("The hypotenuse is: %.2f\n", sqrt(z));
+     }
+     if(n == 24){
+        float x;
+        float y;
+        float z;
+        printf("Enter the hypotenuse:\n");
+        scanf("%f", &z);
+        printf("Enter the cathetus:\n");
+        scanf("%f", &y);
+        x = z * z - y * y;
+        printf("The cathetus is: %.2f\n", sqrt(x));
+     }
+     if(n == 25){
+        int a, b, c, d;
+        printf("Enter the number of strings in the matrix:\n");
+        scanf("%d", &a);
+        printf("Enter the number of columns in the matrix:\n");
+        scanf("%d", &b);
+        float arr[a][b];
+        printf("Enter the matrix:\n");
+        for(c = 0; c < a; c++){
+            for(d = 0; d < b; d++){
+                scanf("%f", &arr[c][d]);
+            }
+        }
+        float x;
+        printf("Enter the number, which you want to multiply the matrix:\n");
+        scanf("%f", &x);
+        for(c = 0; c < a; c++){
+            for(d = 0; d < b; d++){
+                arr[c][d] = arr[c][d] * x;
+            }
+        }
+        for(c = 0; c < a; c++){
+            printf("\n");
+            for(d = 0; d < b; d++){
+                printf("%.2f\t", arr[c][d]);
+            }
         }
      }
     return 0;
